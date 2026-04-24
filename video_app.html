@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Video App</title>
+<style>
+body {margin:0;font-family:Arial;background:#000;color:#fff;}
+.top-bar {position:fixed;top:0;width:100%;background:#111;display:flex;justify-content:space-between;padding:10px;}
+.video {margin-top:60px;height:350px;background:#333;display:flex;justify-content:center;align-items:center;}
+.actions {position:fixed;right:10px;bottom:120px;display:flex;flex-direction:column;gap:10px;}
+.actions button {width:50px;height:50px;border-radius:50%;border:none;background:red;color:#fff;}
+.bottom-nav {position:fixed;bottom:0;width:100%;background:#111;display:flex;justify-content:space-around;padding:10px;}
+.page {display:none;padding-top:70px;text-align:center;}
+.active {display:block;}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+<div>🔍 Search</div>
+<div>⚙️ 🔔 🔗</div>
+</div>
+
+<div id="home" class="page active">
+<div class="video"><h2>Video Player</h2></div>
+</div>
+
+<div id="search" class="page"><h2>Search</h2></div>
+<div id="upload" class="page"><h2>Upload</h2></div>
+<div id="sub" class="page"><h2>Subscriptions</h2></div>
+<div id="profile" class="page"><h2>Profile</h2></div>
+
+<div class="actions">
+<button onclick="alert('Liked')">👍</button>
+<button onclick="alert('Comment')">💬</button>
+<button onclick="alert('Share')">🔄</button>
+<button onclick="alert('Remix')">🎵</button>
+<button onclick="alert('Download')">⬇️</button>
+</div>
+
+<div class="bottom-nav">
+<div onclick="showPage('home')">🏠</div>
+<div onclick="showPage('search')">🔍</div>
+<div onclick="showPage('upload')">➕</div>
+<div onclick="showPage('sub')">📺</div>
+<div onclick="showPage('profile')">👤</div>
+</div>
+
+<script>
+function showPage(p){
+document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+document.getElementById(p).classList.add('active');
+}
+</script>
+
+</body>
+</html>
